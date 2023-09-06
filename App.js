@@ -1,13 +1,17 @@
+// Система
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, Text } from "react-native";
 
-import { mainstyles } from "./styles/main-styles";
+// Стили
+import { appstyles } from "./app-styles";
 
-import TodoListComponent from "./components/todo-list";
+// Компоненты
+import TodoListComponent from "./components/todo-list/todo-list";
 
+// Главная функция проекта
 export default function App() {
   return (
-    <SafeAreaView style={mainstyles.container}>
+    <SafeAreaView style={appstyles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
 

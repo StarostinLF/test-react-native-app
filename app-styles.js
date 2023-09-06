@@ -1,6 +1,7 @@
+// Главные Стили
 import { StyleSheet } from "react-native-web";
 
-export const mainstyles = StyleSheet.create({
+export const appstyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
