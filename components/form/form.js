@@ -15,7 +15,7 @@ export default function Form({ addHandler }) {
     setText(text);
   };
 
-  // Доп. функция (проверка поля ввода на содержимое)
+  // Моя доп. функция (очистка содержимого поля ввода после добавления задачи)
   const clearInput = () => {
     inputRef.current.clear();
   };
@@ -31,9 +31,9 @@ export default function Form({ addHandler }) {
       <Button
         title="Добавить задачу"
         onPress={() => {
-          addHandler(text), clearInput() /* подключение доп. функции */;
+          addHandler(text), clearInput() /* Подключение моей доп. функции */;
         }}
-        disabled={!text} // Доп. метод (отключение кнопки при пустом поле ввода)
+        disabled={!text} // мой доп. метод (отключение кнопки при пустом поле ввода)
         color={appStyles.colorTheme.backgroundColor}
       />
     </View>
