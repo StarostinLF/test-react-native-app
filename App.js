@@ -1,16 +1,25 @@
 // Система
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, Text } from "react-native";
+import { FlatList, SafeAreaView, Text, View } from "react-native";
+import { useState } from "react";
 
 // Стили
-import { appstyles } from "./app-styles";
+import { appStyles } from "./app-styles";
+import Header from "./components/header/header";
 
 // Главная функция проекта
 export default function App() {
+  const [listOfItems, setListOfItems] = useState([
+    { text: "Купить ...", key: "1" },
+    { text: "Помыть ...", key: "2" },
+    { text: "Сделать ...", key: "3" },
+  ]);
+
   return (
-    <SafeAreaView style={appstyles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <SafeAreaView style={appStyles.container}>
+      <Header />
+      <View>
+        <FlatList data={listOfItems} renderItem={({item}) => <Text>{item.text}</Text>} />
+      </View>
     </SafeAreaView>
   );
 }

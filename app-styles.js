@@ -1,12 +1,8 @@
 // Главные Стили
-import { StyleSheet } from "react-native-web";
+import { StyleSheet } from "react-native";
 
-export const appstyles = StyleSheet.create({
+export const appStyles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "20px",
-  }
+    flex: 1,  
+  },
 });
