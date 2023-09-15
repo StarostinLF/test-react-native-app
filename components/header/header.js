@@ -4,7 +4,7 @@ import { View, Text } from "react-native";
 // Стили
 import { headerStyles } from "./header-styles";
 
-// Главная функция проекта
+// Шапка
 export default function Header() {
   return (
     <View style={headerStyles.background}>

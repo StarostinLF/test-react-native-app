@@ -1,4 +1,4 @@
-// Главные Стили
+// Стили листинга
 import { StyleSheet } from "react-native";
 import { appStyles } from "../../app-styles";
 

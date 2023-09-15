@@ -8,12 +8,14 @@ import { appStyles } from "../../app-styles";
 
 // Главная функция проекта
 export default function Form({ addHandler }) {
-  const inputRef = useRef(null);
+  const inputRef = useRef(null); // Хук для доп. функции
   const [text, setText] = useState("");
 
   const OnChange = (text) => {
     setText(text);
   };
+
+  // Доп. функция (проверка поля ввода на содержимое)
   const clearInput = () => {
     inputRef.current.clear();
   };
@@ -29,9 +31,9 @@ export default function Form({ addHandler }) {
       <Button
         title="Добавить задачу"
         onPress={() => {
-          addHandler(text), clearInput();
+          addHandler(text), clearInput() /* подключение доп. функции */;
         }}
-        disabled={!text}
+        disabled={!text} // Доп. метод (отключение кнопки при пустом поле ввода)
         color={appStyles.colorTheme.backgroundColor}
       />
     </View>

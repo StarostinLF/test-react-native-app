@@ -4,7 +4,7 @@ import { TouchableOpacity, Text } from "react-native";
 // Стили
 import { listStyles } from "./list-styles";
 
-// Главная функция проекта
+// Листинг задач
 export default function ListItem({ el, deleteHGandler }) {
   return (
     <TouchableOpacity onPress={() => deleteHGandler(el.key)}>

@@ -18,6 +18,7 @@ export default function App() {
     { text: "Сделать ...", key: "3" },
   ]);
 
+  // Добавление задачи
   const addHandler = (text) => {
     setListOfItems((list) => {
       return [
@@ -26,10 +27,11 @@ export default function App() {
           key: Math.random().toString(36).substring(7),
         },
         ...list,
-      ];      
+      ];
     });
   };
 
+  // Удаление задачи
   const deleteHandler = (key) => {
     setListOfItems((list) => {
       return list.filter((listOfItems) => listOfItems.key != key);

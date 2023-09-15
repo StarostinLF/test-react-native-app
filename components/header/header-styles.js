@@ -1,4 +1,4 @@
-// Главные Стили
+// Стили шапки
 import { StyleSheet } from "react-native";
 import { appStyles } from "../../app-styles";
 
