@@ -2,12 +2,12 @@
 import { View, Text } from "react-native";
 
 // Стили
-import { headersStyles } from "./header-styles";
+import { headerStyles } from "./header-styles";
 
 // Главная функция проекта
 export default function Header() {
   return (
-    <View style={headerStyles.main}>
+    <View style={headerStyles.background}>
       <Text style={headerStyles.text}>Список дел</Text>
     </View>
   );

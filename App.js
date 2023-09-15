@@ -1,10 +1,14 @@
 // Система
-import { FlatList, SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, View, FlatList } from "react-native";
 import { useState } from "react";
 
 // Стили
 import { appStyles } from "./app-styles";
+
+// Компоненты
 import Header from "./components/header/header";
+import ListItem from "./components/list/list";
+import Form from "./components/form/form";
 
 // Главная функция проекта
 export default function App() {
@@ -14,11 +18,37 @@ export default function App() {
     { text: "Сделать ...", key: "3" },
   ]);
 
+  const addHandler = (text) => {
+    setListOfItems((list) => {
+      return [
+        {
+          text: text,
+          key: Math.random().toString(36).substring(7),
+        },
+        ...list,
+      ];      
+    });
+  };
+
+  const deleteHandler = (key) => {
+    setListOfItems((list) => {
+      return list.filter((listOfItems) => listOfItems.key != key);
+    });
+  };
+
   return (
     <SafeAreaView style={appStyles.container}>
       <Header />
+
+      <Form addHandler={addHandler} />
+
       <View>
-        <FlatList data={listOfItems} renderItem={({item}) => <Text>{item.text}</Text>} />
+        <FlatList
+          data={listOfItems}
+          renderItem={({ item }) => (
+            <ListItem el={item} deleteHGandler={deleteHandler} />
+          )}
+        />
       </View>
     </SafeAreaView>
   );

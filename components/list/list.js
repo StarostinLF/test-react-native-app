@@ -1,14 +1,14 @@
 // Система
-import { View, Text, TouchableOpacity } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 // Стили
-import { headersStyles } from "./header-styles";
+import { listStyles } from "./list-styles";
 
 // Главная функция проекта
-export default function ListItem() {
+export default function ListItem({ el, deleteHGandler }) {
   return (
-    <TouchableOpacity>
-      <Text></Text>
+    <TouchableOpacity onPress={() => deleteHGandler(el.key)}>
+      <Text style={listStyles.text}>{el.text}</Text>
     </TouchableOpacity>
   );
 }
