@@ -7,5 +7,6 @@ export const appstyles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-  },
+    gap: "20px",
+  }
 });
